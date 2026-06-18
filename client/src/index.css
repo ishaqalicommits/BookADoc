@@ -1,0 +1,387 @@
+:root {
+  /* MediCare+ inspired teal color palette */
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  --rose-50: #fff1f2;
+  --rose-100: #ffe4e6;
+  --rose-500: #f43f5e;
+  --rose-600: #e11d48;
+  --rose-700: #be123c;
+
+  --primary: var(--teal-600);
+  --primary-dark: var(--teal-700);
+  --primary-light: var(--teal-50);
+  --accent: var(--emerald-500);
+
+  --bg-page: var(--slate-50);
+  --bg-card: #ffffff;
+  --bg-subtle: var(--slate-100);
+  --border: var(--slate-200);
+  --border-md: var(--slate-300);
+  --txt-primary: var(--slate-900);
+  --txt-secondary: var(--slate-600);
+  --txt-muted: var(--slate-400);
+
+  --shadow-xs: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* Dark mode */
+body.dark-mode {
+  --bg-page: #060f1a;
+  --bg-card: #0d1e30;
+  --bg-subtle: #112237;
+  --border: #1e3a5f;
+  --border-md: #264d73;
+  --txt-primary: #f1f5f9;
+  --txt-secondary: #94a3b8;
+  --txt-muted: #64748b;
+}
+
+body.dark-mode {
+  background: var(--bg-page) !important;
+  color: var(--txt-primary);
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-page);
+  min-height: 100vh;
+  margin: 0;
+  color: var(--txt-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  transition: background 0.25s, color 0.25s;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-md);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--txt-muted);
+}
+
+::selection {
+  background: rgba(13, 148, 136, 0.18);
+  color: inherit;
+}
+
+/* ===== Card Styles (MediCare+ inspired) ===== */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== Premium Button (Teal gradient) ===== */
+.btn-premium {
+  background: linear-gradient(135deg, var(--teal-600), var(--teal-700));
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+  letter-spacing: 0.02em;
+}
+
+.btn-premium:hover {
+  background: linear-gradient(135deg, var(--teal-700), var(--teal-800));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+  color: white;
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+/* ===== Navbar (MediCare+ style) ===== */
+.navbar-premium {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  transition: background 0.25s;
+}
+
+body.dark-mode .navbar-premium {
+  background: var(--bg-card);
+  border-bottom-color: var(--border);
+}
+
+/* ===== Logo (Teal gradient) ===== */
+.logo-text {
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--teal-600), var(--emerald-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+}
+
+.main-content {
+  margin-left: 280px;
+  padding: 40px;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ===== Badges (MediCare+ style) ===== */
+.badge-pending {
+  background: #fef9c3;
+  color: #854d0e;
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.badge-approved {
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.badge-completed {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.badge-cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 99px;
+  padding: 2px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* ===== Table headers (MediCare+) ===== */
+th {
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--txt-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* ===== Form controls override ===== */
+.form-control, .form-select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--txt-primary);
+  background: var(--bg-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--teal-500);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+  outline: none;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--txt-secondary);
+  margin-bottom: 4px;
+}
+
+/* ===== Alert overrides ===== */
+.alert-danger {
+  background: var(--rose-50);
+  border: 1px solid var(--rose-100);
+  color: var(--rose-700);
+  border-radius: 10px;
+  font-size: 0.875rem;
+}
+
+/* ===== Bootstrap button overrides (teal) ===== */
+.btn-primary {
+  background-color: var(--teal-600) !important;
+  border-color: var(--teal-600) !important;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background-color: var(--teal-700) !important;
+  border-color: var(--teal-700) !important;
+}
+
+.btn-success {
+  background-color: var(--emerald-600) !important;
+  border-color: var(--emerald-600) !important;
+  border-radius: 8px;
+}
+
+.btn-outline-primary {
+  color: var(--teal-600) !important;
+  border-color: var(--teal-600) !important;
+  border-radius: 10px;
+}
+.btn-outline-primary:hover {
+  background-color: var(--teal-600) !important;
+  border-color: var(--teal-600) !important;
+  color: white !important;
+}
+
+.btn-outline-danger {
+  border-radius: 8px;
+}
+
+/* ===== Stat card override ===== */
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== Footer (MediCare+ style) ===== */
+footer {
+  background: var(--bg-card) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Doctor avatar ===== */
+.doctor-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.doctor-avatar.loaded {
+  opacity: 1;
+}
+
+/* ===== Dropdown overrides ===== */
+.dropdown-menu {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+.dropdown-item {
+  font-size: 0.875rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+.dropdown-item:hover {
+  background: var(--bg-subtle);
+}
+
+/* ===== Tab button adjustments ===== */
+.nav-link {
+  color: var(--txt-secondary);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--teal-600);
+}
